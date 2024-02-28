@@ -1,0 +1,280 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: var(--grey);
+  font-family: 'Chakra_Regular';
+  background-color: var(--black-100);
+  line-height: 1.75rem;
+}
+
+.container {
+  max-width: 76.25rem;
+  margin: 0 auto;
+  padding: 0 0.625rem;
+}
+
+.wrapper {
+  overflow: hidden;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 0;
+  z-index: 999;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.header::before {
+  position: absolute;
+  content: '';
+  background-color: rgba(37, 37, 50, 0.7);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  -webkit-backdrop-filter: blur(0.625rem);
+          backdrop-filter: blur(0.625rem);
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+  opacity: 0;
+}
+
+.header-bg {
+  padding: 0.75rem 0;
+}
+
+.header-bg::before {
+  opacity: 1;
+}
+
+.header_inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .nav_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 4rem;
+}
+
+.header .nav_list-link {
+  font-weight: 500;
+  font-family: 'Chakra_Medium';
+  font-size: 1rem;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.header .nav_list-link.active {
+  color: var(--white);
+}
+
+.header .nav_list-link:hover {
+  color: var(--white);
+}
+
+.header-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.btn {
+  background-color: transparent;
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  padding: 0.75rem 1.5rem;
+  border-width: 0.0625rem;
+  font-family: 'Chakra_Light';
+  font-size: 1rem;
+  -o-border-image: var(--gradient-main) 1;
+     border-image: var(--gradient-main) 1;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  position: relative;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-image: var(--gradient-main);
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.btn:hover::after {
+  opacity: 1;
+}
+
+.btn-link {
+  background-image: var(--gradient-main);
+  padding: 1.125rem 2.375rem;
+  text-transform: uppercase;
+  color: var(--white);
+  letter-spacing: 0.09375rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  font-family: 'Chakra_Bold';
+  line-height: 0.875rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.btn-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: var(--gradient-main);
+  -webkit-filter: blur(1.56rem);
+          filter: blur(1.56rem);
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease 0s;
+  transition: opacity 0.3s ease 0s;
+  z-index: -1;
+}
+
+.btn-link:hover::before {
+  opacity: 1;
+}
+
+.h1 {
+  font-family: 'Chakra_Semibold';
+  font-size: var(--h1-size);
+  font-weight: 600;
+  line-height: 5.18rem;
+  color: var(--white);
+  letter-spacing: -0.005em;
+}
+
+.h2 {
+  font-family: 'Chakra_Medium';
+  font-size: var(--h2-size);
+  font-weight: 500;
+  color: var(--white);
+  letter-spacing: -0.005em;
+  line-height: 3.625rem;
+}
+
+.h3 {
+  font-family: 'Chakra_Semibold';
+  font-weight: 600;
+  font-size: var(--body-size-main);
+  background: var(--gradient-main);
+  display: inline-block;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.3rem;
+  letter-spacing: 0.14rem;
+  text-transform: uppercase;
+}
+
+.text {
+  font-size: 1rem;
+  font-family: 'Chakra_Light';
+  font-weight: 300;
+  line-height: 1.75rem;
+}
+
+.gradient-bg {
+  position: relative;
+}
+
+.gradient-bg::before {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+  background: var(--gradient-main);
+  -webkit-filter: blur(6.56rem);
+          filter: blur(6.56rem);
+  -webkit-transform: translate(-50%, -50%) rotate(-30deg);
+          transform: translate(-50%, -50%) rotate(-30deg);
+  z-index: -2;
+  border-radius: 88% 12% 88% 12% / 20% 37% 63% 80%;
+  border-radius: 50%;
+}
+
+.video-play {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.video-play::before {
+  position: absolute;
+  content: '';
+  width: 1.75rem;
+  height: 1.75rem;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 2;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+  background: url("../assets/images/svg/play_transparent.svg") center no-repeat;
+}
+
+.video-play:hover::before {
+  -webkit-transform: translate(-50%, -50%) scale(1.2);
+          transform: translate(-50%, -50%) scale(1.2);
+}
+
+.video-play img {
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.video-play:hover img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
